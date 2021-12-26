@@ -1,0 +1,9 @@
+<h1>投稿一覧<h1>
+<div>
+  <%= link_to '写真投稿', new_post_path %>
+</div>
+<div>
+  <%= @posts.each do |post|%>
+    <%= post.description %>
+  <% end %>
+</div>
