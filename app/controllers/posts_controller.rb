@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  skip_before_action :require_login, only: [:index]
   def index
     @posts = Post.all
   end
@@ -15,6 +16,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-		params.require(:post).permit(:description)
+		params.require(:post).permit(:description, :photo)
 	end
 end

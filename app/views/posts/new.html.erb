@@ -1,7 +1,13 @@
 <h1>投稿画面<h1>
 <%= form_with model: @post, local: true do |form| %>
-<p><%= form.label :description %><br>
-<%= form.text_field :description %> 
+<p>
+  <%= form.label :description %>
+  <%= form.text_field :description %> 
 </p>
+<p>
+  <%= form.label :photo %>
+  <%= form.file_field :photo %>
+</p>
+
 <p><%= form.submit %></p>
 <% end %>

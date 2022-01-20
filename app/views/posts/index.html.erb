@@ -1,9 +1,15 @@
-<h1>投稿一覧<h1>
-<div>
+<div class="container mx-auto">
   <%= link_to '写真投稿', new_post_path %>
-</div>
-<div>
-  <%= @posts.each do |post|%>
-    <%= post.description %>
-  <% end %>
+    <% @posts.each do |post|%>
+      <div class="card mx-auto", style="width: 18rem;">
+        <% if post.photo? %>
+          <%= image_tag post.photo.url, class: "bd-placeholder-img card-img-top", size: "200x200" %>
+        <% end %>
+        <div class="card-body">
+          <p class="card-text">
+            <%= post.description%>
+          </p>
+        </div>
+      </div>
+    <% end %>
 </div>

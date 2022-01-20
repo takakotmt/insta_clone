@@ -10,6 +10,15 @@
   </head>
 
   <body>
-    <%= yield %>
+  <header class="p-3 mb-3 border-bottom">
+    <div class="col-md-12 text-end">
+      <% if current_user %>
+        <%= link_to "Logout", :logout, method: :post,class: "btn btn-primary" %>
+      <% else %>
+        <%= link_to "Login", :login, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </header>
+      <%= yield %>
   </body>
 </html>
